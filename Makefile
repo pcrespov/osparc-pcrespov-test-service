@@ -59,7 +59,7 @@ endef
 
 .PHONY: build build-devel build-nc build-devel-nc
 build build-devel build-nc build-devel-nc: docker-compose.yml service.cli/run ## builds image
-	# building image local/${DOCKER_IMAGE_NAME}...
+	# building image local/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}
 	@$(call _docker_compose_build)
 
 define show-meta
