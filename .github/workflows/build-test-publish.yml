@@ -26,7 +26,6 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
           cache: "pip"
-          cache-dependency-path: "**/requirements*.txt"
       - name: show versions
         run: ./.github/show_system_versions.bash
       - name: set owner variable
