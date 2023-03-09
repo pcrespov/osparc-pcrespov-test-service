@@ -1,12 +1,5 @@
 #
-# CONVENTIONS:
-#
-# - targets shall be ordered such that help list rensembles a typical workflow, e.g. 'make devenv tests'
-# - add doc to relevant targets
-# - internal targets shall start with '.'
-# - KISS
-#
-# author: Pedro Crespo-Valero
+# Author: Pedro Crespo-Valero
 
 SHELL = /bin/sh
 .DEFAULT_GOAL := help
@@ -58,8 +51,8 @@ endef
 
 
 .PHONY: build build-devel build-nc build-devel-nc
-build build-devel build-nc build-devel-nc: docker-compose.yml service.cli/run ## builds image
-	# building image local/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}
+build build-devel build-nc build-devel-nc: VERSION docker-compose.yml service.cli/run ## builds image
+	# building image local/${DOCKER_IMAGE_NAME}...
 	@$(call _docker_compose_build)
 
 define show-meta
